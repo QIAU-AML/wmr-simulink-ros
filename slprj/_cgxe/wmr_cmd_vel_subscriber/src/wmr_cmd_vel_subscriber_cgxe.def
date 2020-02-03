@@ -1,0 +1,4 @@
+LIBRARY wmr_cmd_vel_subscriber_cgxe.mexw64
+EXPORTS
+mexFunction
+mexfilerequiredapiversion

@@ -1,0 +1,51 @@
+CC     = "C:\Program Files\MATLAB\R2018b\sys\lcc64\lcc64\bin\lcc64.exe"
+LD     = "C:\Program Files\MATLAB\R2018b\sys\lcc64\lcc64\bin\lcclnk64.exe"
+LIBCMD = "C:\Program Files\MATLAB\R2018b\sys\lcc64\lcc64\bin\lcclib64.exe"
+CFLAGS = -dll -noregistrylookup  -c -Zp8 -DLCC_WIN64 -DMATLAB_MEX_FILE -nodeclspec  
+LDFLAGS = -s -dll -L"C:\Program Files\MATLAB\R2018b\sys\lcc64\lcc64\lib64" -entry LibMain -map sfun.map 
+LIBFLAGS = 
+
+OBJECTS = \
+	"c_mexapi_version.obj"\
+	"lccstub.obj"\
+	"wmr_cmd_vel_publisher_cgxe.obj"\
+	"m_xK0kG8Tbr1tXdc2uvJFezD.obj"\
+	"wmr_cmd_vel_publisher_cgxe_registry.obj"\
+	"roundtolong.obj"\
+	"csleepfun_windows.obj"\
+	"ctimefun_windows.obj"\
+	"wmr_cmd_vel_publisher_cgxe.def"\
+	"C:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmx.lib"\
+	"C:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmex.lib"\
+	"C:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmat.lib"\
+	"C:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libfixedpoint.lib"\
+	"C:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libut.lib"\
+	"C:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmwmathutil.lib"\
+	"C:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libemlrt.lib"\
+	"C:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmwcgxert.lib"\
+	"C:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmwslexec_simbridge.lib"\
+	"C:\Program Files\MATLAB\R2018b\lib\win64\libmwipp.lib"\
+	"C:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libcovrt.lib"\
+	"C:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft\libmwsl_sfcn_cov_bridge.lib"\
+
+INCLUDE_PATH= -I"C:\Program Files\MATLAB\R2018b\extern\include"  -I"C:\Program Files\MATLAB\R2018b\simulink\include"  -I"C:\Program Files\MATLAB\R2018b\rtw\c\src"  -I"C:\Users\robot\Desktop\matlab_ros\simulink_stack"  -I"C:\Users\robot\Desktop\matlab_ros\simulink_stack\slprj\_cprj"  -I"C:\Program Files\MATLAB\R2018b\sys\lcc64\lcc64\include64"  -I"C:\Users\robot\Desktop\matlab_ros\simulink_stack\slprj\_cgxe\wmr_cmd_vel_publisher\src"  -I"C:\Program Files\MATLAB\R2018b\toolbox\robotics\robotcore\rate\include" 
+ 
+
+wmr_cmd_vel_publisher_cgxe.mexw64 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o wmr_cmd_vel_publisher_cgxe.mexw64 @wmr_cmd_vel_publisher_cgxe.lmko
+c_mexapi_version.obj :	"C:\Program Files\MATLAB\R2018b\extern\version\c_mexapi_version.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2018b\extern\version\c_mexapi_version.c"
+lccstub.obj :	"C:\Program Files\MATLAB\R2018b\sys\lcc64\lcc64\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2018b\sys\lcc64\lcc64\mex\lccstub.c"
+wmr_cmd_vel_publisher_cgxe.obj :	"wmr_cmd_vel_publisher_cgxe.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "wmr_cmd_vel_publisher_cgxe.c"
+m_xK0kG8Tbr1tXdc2uvJFezD.obj :	"m_xK0kG8Tbr1tXdc2uvJFezD.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "m_xK0kG8Tbr1tXdc2uvJFezD.c"
+wmr_cmd_vel_publisher_cgxe_registry.obj :	"wmr_cmd_vel_publisher_cgxe_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "wmr_cmd_vel_publisher_cgxe_registry.c"
+roundtolong.obj :	"c:\program files\matlab\r2018b\toolbox\robotics\robotcore\rate\roundtolong.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c:\program files\matlab\r2018b\toolbox\robotics\robotcore\rate\roundtolong.c"
+csleepfun_windows.obj :	"c:\program files\matlab\r2018b\toolbox\robotics\robotcore\rate\csleepfun_windows.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c:\program files\matlab\r2018b\toolbox\robotics\robotcore\rate\csleepfun_windows.c"
+ctimefun_windows.obj :	"c:\program files\matlab\r2018b\toolbox\robotics\robotcore\rate\ctimefun_windows.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c:\program files\matlab\r2018b\toolbox\robotics\robotcore\rate\ctimefun_windows.c"
